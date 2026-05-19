@@ -10,8 +10,8 @@
 
 | Matric No. | Name | Role / Focus Area | Key Responsibilities |
 | :--- | :--- | :--- | :--- |
-| **2418662** | **Nurin Aleya binti Azhari**| Project Manager & Lead Writer[cite: 1] | Set up and manage the shared GitHub repository, structure documentation, compile intro/objectives, and audit code integration to avoid penalties.[cite: 1] |
-| **2412366** | **Nor Farrah Fatihah bt. Mohd. Sopian** | Frontend UI/UX Developer[cite: 1] | Develop interactive views using Laravel's Blade Engine, map typography and color palettes, ensure intuitive user navigation and accessibility.[cite: 1] |
+| **2418662** | **Nurin Aleya binti Azhari**| Project Manager & Lead Writer | Set up and manage the shared GitHub repository, structure documentation, compile intro/objectives, and audit code integration to avoid penalties. |
+| **2412366** | **Nor Farrah Fatihah bt. Mohd. Sopian** | Frontend UI/UX Developer | Develop interactive views using Laravel's Blade Engine, map typography and color palettes, ensure intuitive user navigation and accessibility.|
 | **[Matric No]** | **Teammate 3** | Backend Engineer | Architect web application routing, program Controllers to process requests, and engineer full CRUD business logic. |
 | **[Matric No]** | **Teammate 4** | Database Architect| Design and construct Shariah-compliant Eloquent database Models, migrations, and enforce data normalization patterns. |
 | **[Matric No]** | **Teammate 5** | Systems Analyst | Deploy secure role-based session authentication, draft application interaction sequence flows, and compile interface wireframes. |
