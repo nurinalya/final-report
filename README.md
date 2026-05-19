@@ -2,7 +2,6 @@
 
 > **Course:** BIIT 2305 - Web Application Development  
 > **Section:** Section 1  
-> **Semester:** Semester 2, 2025/2026  
 > **Instructor:** Dr. Najhan bin Muhamad Ibrahim  
 > **Submission Deadline:** May 22, 2026
 
