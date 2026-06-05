@@ -1,23 +1,29 @@
-
 import '../css/app.css';
+import Alpine from 'alpinejs';
 
-import { createApp, h } from 'vue';
-import { createInertiaApp } from '@inertiajs/vue3';
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+window.Alpine = Alpine;
 
-const appName = import.meta.env.VITE_APP_NAME || 'StudyBuddy';
-
-createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
-    setup({ el, App, props, plugin }) {
-        return createApp({ render: () => h(App, props) })
-            .use(plugin)
-            .use(ZiggyVue)
-            .mount(el);
+Alpine.data('darkMode', () => ({
+    currentTab: 'learner',
+    dark: localStorage.getItem('darkMode') === 'true' ||
+        (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches),
+    init() {
+        this.$watch('dark', val => {
+            this.applyDark(val);
+        });
+        this.applyDark(this.dark);
     },
-    progress: {
-        color: '#4B5563',
+    applyDark(val) {
+        if (val) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        localStorage.setItem('darkMode', val);
     },
-});
+    toggle() {
+        this.dark = !this.dark;
+    },
+}));
+
+Alpine.start();
