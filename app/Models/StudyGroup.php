@@ -7,18 +7,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class StudySession extends Model
+class StudyGroup extends Model
 {
+    protected $table = 'study_groups';
+
     protected $fillable = [
         'user_id',
         'course_code',
         'topic',
-        'type',
         'location',
-        'session_date',
-        'session_time',
-        'max_slots',
-        'available_slots',
+        'date',
+        'time',
+        'participant_limit',
         'joined_count',
         'status',
         'material_path',
@@ -27,11 +27,10 @@ class StudySession extends Model
     protected function casts(): array
     {
         return [
-            'max_slots' => 'integer',
-            'available_slots' => 'integer',
+            'participant_limit' => 'integer',
             'joined_count' => 'integer',
-            'session_date' => 'date:Y-m-d',
-            'session_time' => 'string',
+            'date' => 'date:Y-m-d',
+            'time' => 'string',
         ];
     }
 
@@ -42,22 +41,27 @@ class StudySession extends Model
 
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'session_user')
+        return $this->belongsToMany(User::class, 'group_user', 'group_id', 'user_id')
             ->withTimestamps();
     }
 
-    public function attendanceRecords(): HasMany
+    public function attendances(): HasMany
     {
-        return $this->hasMany(AttendanceRecord::class);
+        return $this->hasMany(Attendance::class, 'study_group_id');
     }
 
     public function ratings(): HasMany
     {
-        return $this->hasMany(Rating::class);
+        return $this->hasMany(Rating::class, 'study_group_id');
     }
 
     public function chatMessages(): HasMany
     {
-        return $this->hasMany(GroupChatMessage::class);
+        return $this->hasMany(GroupChat::class, 'study_group_id');
+    }
+
+    public function getAvailableSlotsAttribute(): int
+    {
+        return max(0, $this->participant_limit - $this->joined_count);
     }
 }

@@ -4,24 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class HelpRequest extends Model
+class AttendanceRecord extends Model
 {
     protected $fillable = [
         'user_id',
-        'course_code',
-        'topic',
-        'description',
-        'image_path',
-        'status',
-        'response_count',
+        'study_session_id',
+        'attended',
     ];
 
     protected function casts(): array
     {
         return [
-            'response_count' => 'integer',
+            'attended' => 'boolean',
         ];
     }
 
@@ -30,8 +25,8 @@ class HelpRequest extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function responses(): HasMany
+    public function studySession(): BelongsTo
     {
-        return $this->hasMany(Reply::class, 'help_request_id');
+        return $this->belongsTo(StudySession::class);
     }
 }
