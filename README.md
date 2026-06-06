@@ -252,6 +252,15 @@ Group Member :
 
 
 ## ERD Diagram
+<img width="1406" height="722" alt="Screenshot 2026-06-06 141644" src="https://github.com/user-attachments/assets/37469418-44b3-4425-b721-ac83fbdb7238" />
+<img width="1158" height="717" alt="Screenshot 2026-06-06 141702" src="https://github.com/user-attachments/assets/1806b530-4aa5-4e30-aced-ced790464a56" />
+
+### The Entity Relationship Diagram (ERD) represents the database structure of the StudyBuddy and illustrates how the different entities are connected through primary keys and foreign keys. The Users table serves as the central entity in the database as it is linked to several other tables. A user can create multiple study groups through the Study_Groups table which establish a one-to-many relationship where each study group belongs to only one user. In addition, users can join various study groups through the Group_User table which functions as a junction table to implement a many-to-many relationship between users and study groups. This design allows a single user to participate in multiple groups while each group can have multiple members.
+
+### Furthermore, the Study_Groups table is associated with several supporting entities that enhance the functionality of the system. The Attendance table records the attendance status of students for each study session while the Group_Chats table stores messages exchanged within a study group. The Ratings table allows users to provide feedback and rate the study groups they have joined, creating relationships with both the Users and Study_Groups tables. Besides that, the Help_Requests table enables users to submit academic questions or requests for assistance and each request may receive multiple responses stored in the Replies table. Lastly, the Passkeys table is linked to the Users table to manage user authentication credentials.
+
+### Overall, the ERD demonstrates a well-organized relational database structure where the Users and Study_Groups entities form the core of the system. The relationships between the tables ensure efficient management of study groups, member participation, communication, attendance tracking, user authentication, help requests and feedback collection which supporting the overall functionality of the Study Group Management System
+
 
 
 ## Conclusion
