@@ -254,7 +254,7 @@ Group Member :
 | `replies` | ✅ | ✅ | ❌ | ❌ | Post a reply to a help request, view all replies, auto-increments response count and changes help request status to "in_progress" |
 | `ratings` | ✅ | ✅ | ✅ | ❌ | Submit star rating (1–5) with feedback, view ratings per group, re-submitting updates the existing rating (updateOrCreate) |
 | `group_chats` | ✅ | ✅ | ❌ | ❌ | Send a message inside a study group (host or joined members only), view full chat history per group |
-| `attendances` | ✅ | ✅ | ✅ | ❌ | Bulk mark attendance by student matric number, view attendance records per group, re-submitting updates existing record (updateOrCreate) |
+| `attendances` | ✅ | ✅ | ✅ | ❌ | Mark attendance by student matric number, view attendance records per group, re-submitting updates existing record (updateOrCreate) |
 
 
 
