@@ -267,6 +267,12 @@ src="https://github.com/user-attachments/assets/7abaec5a-6592-44d6-99de-15a7c89d
 
 ### The sequence diagram illustrates the full interaction flow of the StudyBuddy web application from user registeration and login, through creating and joining study groups, sending chat messages, posting help requests and submitting ratings.
 
+### The StudyBuddy application begins with user authentication.New student register an account by submitting their name, matric number, email and password which gets inserted into the users table. Once registered, the student logs in using their email and password which is verified against the database before being redirected to the dashboard.
+
+### After logging in, students can interact with study groups. A host can create a new study group by filling in the course code, topic, location, date , time and participant limit which get stored in the study_groups table. Other students can join the group which inserts a record into the group_user table and increments the joined count. Members who have joined can also send chat messages stored in the group_chats table and the host can mark attendance by updating the attendances table and mark the session as completed by updating the study_groups status.
+
+### Students can also use the help request feature for academic support. A student can post a help request with a course code, topic and description which gets inserted into the help_requests table. Other students can reply to the request which inserts a record into the replies table and automatically updates the help request status. Once a study session is completed, students can submit a star rating and feedback which is saved into the ratings table.
+
 
 
 ## Conclusion
