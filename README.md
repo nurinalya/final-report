@@ -256,6 +256,8 @@ Group Member :
 | `group_chats` | ✅ | ✅ | ❌ | ❌ | Send a message inside a study group (host or joined members only), view full chat history per group |
 | `attendances` | ✅ | ✅ | ✅ | ❌ | Mark attendance by student matric number, view attendance records per group, re-submitting updates existing record (updateOrCreate) |
 
+### CRUD Operations by Feature
+
 
 
 
