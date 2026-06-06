@@ -258,10 +258,56 @@ Group Member :
 
 ### CRUD Operations by Feature
 
+#### 1. User Authentication & Profile
+| Operation | Method | Route | Description |
+|-----------|--------|-------|-------------|
+| Create | `POST` | `/register` | Register a new student account |
+| Read | `GET` | `/profile` | View user profile and settings |
+| Update | `PUT` | `/profile` | Update name, email, matric number, profile photo |
+| Delete | `DELETE` | `/profile` | Delete user account permanently |
 
+#### 2. Study Groups
+| Operation | Method | Route | Description |
+|-----------|--------|-------|-------------|
+| Create | `POST` | `/sessions` | Create a new study group with optional material file |
+| Read | `GET` | `/dashboard` | View all study groups, my groups, and recommended groups |
+| Update | `PUT` | `/sessions/{id}` | Edit study group details and replace material file |
+| Update | `POST` | `/sessions/{id}/completed` | Mark a study group session as completed |
+| Update | `POST` | `/sessions/{id}/join` | Join a study group (adds to `group_user` pivot) |
+| Delete | `DELETE` | `/sessions/{id}` | Delete a study group and its uploaded material |
 
+#### 3. Help Requests
+| Operation | Method | Route | Description |
+|-----------|--------|-------|-------------|
+| Create | `POST` | `/help-requests` | Post a new help request with optional image |
+| Read | `GET` | `/dashboard` | View all help requests on the dashboard |
+| Read | `GET` | `/help-requests/{id}` | View a single help request and its replies |
+| Update | `PUT` | `/help-requests/{id}` | Edit help request details, image, and status |
+| Delete | `DELETE` | `/help-requests/{id}` | Delete a help request and its image file |
 
+#### 4. Replies
+| Operation | Method | Route | Description |
+|-----------|--------|-------|-------------|
+| Create | `POST` | `/help-requests/{id}/responses` | Post a reply to a help request |
+| Read | `GET` | `/help-requests/{id}` | View all replies under a help request |
 
+#### 5. Ratings
+| Operation | Method | Route | Description |
+|-----------|--------|-------|-------------|
+| Create / Update | `POST` | `/sessions/{id}/rating` | Submit or update a star rating and feedback for a study group |
+| Read | `GET` | `/dashboard` | View all ratings submitted by the current user |
+
+#### 6. Group Chat
+| Operation | Method | Route | Description |
+|-----------|--------|-------|-------------|
+| Create | `POST` | `/sessions/{id}/chat` | Send a message in a study group chat |
+| Read | `GET` | `/dashboard` | View chat messages loaded per study group |
+
+#### 7. Attendance
+| Operation | Method | Route | Description |
+|-----------|--------|-------|-------------|
+| Create / Update | `POST` | `/sessions/{id}/attendance-bulk` | Bulk mark or update attendance by student matric number |
+| Read | `GET` | `/dashboard` | View attendance records per study group |
 
 
 
