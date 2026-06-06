@@ -262,6 +262,8 @@ Group Member :
 ### Overall, the ERD demonstrates a well-organized relational database structure where the Users and Study_Groups entities form the core of the system. The relationships between the tables ensure efficient management of study groups, member participation, communication, attendance tracking, user authentication, help requests and feedback collection which supporting the overall functionality of the Study Group Management System
 
 ## Sequence Diagram
+<img width="3011" height="8192" alt="Sequence Diagram - StudyBuddy" src="https://github.com/user-attachments/assets/7abaec5a-6592-44d6-99de-15a7c89dfba2" />
+
 
 ## Conclusion
 
