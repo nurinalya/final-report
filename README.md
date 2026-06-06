@@ -265,6 +265,9 @@ Group Member :
 <img width="800" alt="Sequence Diagram - StudyBuddy" 
 src="https://github.com/user-attachments/assets/7abaec5a-6592-44d6-99de-15a7c89dfba2" />
 
+### The sequence diagram illustrates the full interaction flow of the StudyBuddy web application from user registeration and login, through creating and joining study groups, sending chat messages, posting help requests and submitting ratings.
+
+
 
 ## Conclusion
 
