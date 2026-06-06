@@ -247,14 +247,14 @@ Group Member :
 
 | Table | Create | Read | Update | Delete | Details |
 |-------|:------:|:----:|:------:|:------:|---------|
-| `users` | ✅ | ✅ | ✅ | ✅ | Register new account; view profile; update name, email, matric number, and profile photo; delete account |
-| `study_groups` | ✅ | ✅ | ✅ | ✅ | Create study group with optional material upload; view all groups and dashboard stats; update topic, location, date, time, participant limit, and material; mark session as completed; delete group |
-| `group_user` | ✅ | ✅ | ❌ | ❌ | Join a study group; view list of joined members; status auto-updates to "full" when participant limit is reached |
-| `help_requests` | ✅ | ✅ | ✅ | ✅ | Post a help request with optional image; view all requests; update course, topic, description, status, and image; delete request |
-| `replies` | ✅ | ✅ | ❌ | ❌ | Post a reply to a help request; view all replies; auto-increments response count and changes help request status to "in_progress" |
-| `ratings` | ✅ | ✅ | ✅ | ❌ | Submit star rating (1–5) with feedback; view ratings per group; re-submitting updates the existing rating (updateOrCreate) |
-| `group_chats` | ✅ | ✅ | ❌ | ❌ | Send a message inside a study group (host or joined members only); view full chat history per group |
-| `attendances` | ✅ | ✅ | ✅ | ❌ | Bulk mark attendance by student matric number; view attendance records per group; re-submitting updates existing record (updateOrCreate) |
+| `users` | ✅ | ✅ | ✅ | ✅ | Register new account, view profile, update name, email, matric number, and profile photo, delete account |
+| `study_groups` | ✅ | ✅ | ✅ | ✅ | Create study group with optional material to upload, view all groups and dashboard stats, update topic, location, date, time, participant limit, and material, mark session as completed, delete group |
+| `group_user` | ✅ | ✅ | ❌ | ❌ | Join a study group, view list of joined members, status auto-updates to "full" when participant limit is reached |
+| `help_requests` | ✅ | ✅ | ✅ | ✅ | Post a help request with optional image, view all requests, update course, topic, description, status, and image, delete request |
+| `replies` | ✅ | ✅ | ❌ | ❌ | Post a reply to a help request, view all replies, auto-increments response count and changes help request status to "in_progress" |
+| `ratings` | ✅ | ✅ | ✅ | ❌ | Submit star rating (1–5) with feedback, view ratings per group, re-submitting updates the existing rating (updateOrCreate) |
+| `group_chats` | ✅ | ✅ | ❌ | ❌ | Send a message inside a study group (host or joined members only), view full chat history per group |
+| `attendances` | ✅ | ✅ | ✅ | ❌ | Bulk mark attendance by student matric number, view attendance records per group, re-submitting updates existing record (updateOrCreate) |
 
 
 
