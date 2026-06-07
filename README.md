@@ -214,12 +214,20 @@ To create a more organized and effective learning environment for students.
 ### Hosts open the attendance section for a study group and view the list of participants. They can mark attendance using the toggle switch and once completed, click the Save Attendance button. The system then saves the attendance records into the database for tracking and future reference.
 
 
-## MVC Explaination
+## MVC Architecture
+The StudyBuddy system is developed using the MVC (Model-View-Controller) architecture provided by Laravel.
 
+Model
+The Model manages the data and business logic of the system. In this project, models such as StudyGroup, HelpRequest, Attendance, Rating, GroupChat, and User are used to store and retrieve information from the database. These models handle study sessions, help requests, attendance records, ratings, chat messages, and user information.
 
+View
+The View is responsible for displaying information to users. The views present study groups, help requests, dashboards, forms, and other user interfaces. Users interact with the system through these pages to create sessions, join groups, and submit requests.
 
+Controller
+The Controller acts as a bridge between the Model and the View. In this project, the DashboardController processes user requests, validates input data, retrieves information from the database, and returns the appropriate views. It also handles functions such as creating study sessions, updating sessions, joining groups, managing attendance, ratings, help requests, and chat messages.
 
-
+Benefits of MVC
+The MVC architecture helps organize the system into separate components. This makes the system easier to maintain, update, test, and expand in the future.
 
 
 ## Route Explaination
