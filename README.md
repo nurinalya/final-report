@@ -213,22 +213,61 @@ To create a more organized and effective learning environment for students.
 ### How It Works :
 ### Hosts open the attendance section for a study group and view the list of participants. They can mark attendance using the toggle switch and once completed, click the Save Attendance button. The system then saves the attendance records into the database for tracking and future reference.
 
+## MVC Explanation
 
-## MVC Architecture
-The StudyBuddy system is developed using the MVC (Model-View-Controller) architecture provided by Laravel.
+StudyBuddy is built using the Laravel framework, which follows the Model-View-Controller (MVC) architectural pattern. This pattern separates the application into three interconnected components, making the system easier to develop, maintain, and scale.
 
-Model
-The Model manages the data and business logic of the system. In this project, models such as StudyGroup, HelpRequest, Attendance, Rating, GroupChat, and User are used to store and retrieve information from the database. These models handle study sessions, help requests, attendance records, ratings, chat messages, and user information.
+### Model
+The Model represents the data layer of the application. It handles all database interactions, defines relationships between tables, and enforces business logic related to data. In StudyBuddy, each database table has a corresponding Eloquent Model.
+**Key Eloquent Relationships:**
+- A `User` **has many** `StudyGroup` (as host), `HelpRequest`, `Reply`, `Rating`, and `GroupChat` records.
+- A `StudyGroup` **belongs to** a `User` (host) and **has many** members through `group_user`, and also **has many** `Attendance`, `GroupChat`, and `Rating` records.
+- A `HelpRequest` **belongs to** a `User` and **has many** `Reply` records.
 
-View
-The View is responsible for displaying information to users. The views present study groups, help requests, dashboards, forms, and other user interfaces. Users interact with the system through these pages to create sessions, join groups, and submit requests.
 
-Controller
-The Controller acts as a bridge between the Model and the View. In this project, the DashboardController processes user requests, validates input data, retrieves information from the database, and returns the appropriate views. It also handles functions such as creating study sessions, updating sessions, joining groups, managing attendance, ratings, help requests, and chat messages.
+### View
+The View represents the presentation layer of the application. It is responsible for displaying data to the user and rendering the user interface. In StudyBuddy, Views are built using Laravel Blade templates and are organized by feature.
 
-Benefits of MVC
-The MVC architecture helps organize the system into separate components. This makes the system easier to maintain, update, test, and expand in the future.
+1. Front Page - The landing page that welcomes users and provides access to Sign Up and Login options. 
+2. Login Page - Displays the login form where users enter their Student ID/email and password, with an option to log in via Google. 
+3. Sign Up Page - Displays the registration form where new users enter their details to create an account. 
+4. Learner Dashboard - The main interface for students, displaying active groups, joined sessions, help requests, available study groups, study materials, and group chat. Includes a course search/filter feature and dark mode toggle.
+5. Host Dashboard - The management interface for hosts, showing hosted sessions, participant lists, attendance management, and peer help requests. |
+6. Create Study Group Form - A form view for hosts to enter course code, topic, location, date, time, participant limit, and optional study materials. |
+7. Post Help Request Form - A form view for students to submit academic help requests including course code, topic, description, and optional image upload. |
+8. Take Attendance View - Displays the list of joined students with toggle switches for hosts to mark each student as present or absent. |
+9. Rating Form - Displayed after a session is completed, allowing students to submit a star rating and optional feedback. |
+10. Group Chat View - Displays the real-time chat history within a study group and allows members to send new messages. |
 
+### Controller
+The Controller acts as the intermediary layer between the Model and the View. It handles incoming HTTP requests, processes the logic, interacts with the appropriate Model, and returns the correct View or response. In StudyBuddy, each feature is managed by a dedicated Controller.
+
+1. AuthController - Handles user registration, login credential validation, Google OAuth authentication, and logout. Redirects users to their dashboard upon success. 
+2. ProfileController - Manages viewing, updating (name, email, matric number, profile photo), and permanently deleting a user account. 
+3. StudyGroupController - Handles creating new study groups with optional material uploads, displaying all groups on the dashboard, editing group details, marking sessions as completed, processing join requests, and deleting sessions. 
+4. HelpRequestController - Manages posting, viewing, updating, and deleting academic help requests including optional image file handling. 
+5. ReplyController - Handles submitting replies to help requests, updating the response count, and changing the help request status to `in_progress`. 
+6. RatingController - Processes star rating and feedback submissions. Uses `updateOrCreate` to either save a new rating or update an existing one for the same user and session. 
+7. GroupChatController - Handles sending new chat messages within a study group (restricted to host and joined members) and loading chat history per group. 
+8. AttendanceController - Handles bulk saving or updating of student attendance records per study session using matric numbers. Uses `updateOrCreate` to prevent duplicate records. 
+
+**General Request Flow in StudyBuddy:**
+
+User Action (Browser)
+       ↓
+  Route (web.php)
+       ↓
+  Controller Method
+  ├── Validates Input
+  ├── Calls Model (Eloquent)
+  │     └── Queries/Updates Database
+  └── Returns View or Redirect
+       ↓
+    View (Blade)
+       ↓
+  Rendered Response to User
+
+By applying the MVC pattern, StudyBuddy ensures a clear **separation of concerns**, the Model handles data, the View handles display, and the Controller handles logic. This makes the codebase more organized, easier to debug, and more maintainable as the application grows.
 
 ## Route Explaination
 In the Student Dashboard System, routes are responsible for receiving user requests and directing them to the appropriate controllers. Routes are defined in the web.php file and act as a connection between the user interface and the application logic. Various routes are implemented to support the functionalities provided by the system. Users can access the dashboard, view enrolled courses, monitor attendance records, check grades, view timetables, manage assignments, read announcements, communicate through messages, update their profiles, and modify account settings. Authentication routes are also provided to enable users to log in and log out securely.
