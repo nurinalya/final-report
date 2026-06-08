@@ -251,22 +251,6 @@ The Controller acts as the intermediary layer between the Model and the View. It
 7. GroupChatController - Handles sending new chat messages within a study group (restricted to host and joined members) and loading chat history per group. 
 8. AttendanceController - Handles bulk saving or updating of student attendance records per study session using matric numbers. Uses `updateOrCreate` to prevent duplicate records. 
 
-**General Request Flow in StudyBuddy:**
-
-User Action (Browser)
-       ↓
-  Route (web.php)
-       ↓
-  Controller Method
-  ├── Validates Input
-  ├── Calls Model (Eloquent)
-  │     └── Queries/Updates Database
-  └── Returns View or Redirect
-       ↓
-    View (Blade)
-       ↓
-  Rendered Response to User
-
 By applying the MVC pattern, StudyBuddy ensures a clear **separation of concerns**, the Model handles data, the View handles display, and the Controller handles logic. This makes the codebase more organized, easier to debug, and more maintainable as the application grows.
 
 ## Route Explaination
