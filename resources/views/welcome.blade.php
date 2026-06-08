@@ -98,7 +98,7 @@
 
         <footer class="border-t border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 py-6">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400 dark:text-slate-500">
-                BIIT 2305 &mdash; Web Application Development &middot; Section 1
+                BIIT 2305 &mdash; Web Application Development &middot; Section 3
             </div>
         </footer>
     </div>
