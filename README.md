@@ -231,28 +231,53 @@ The MVC architecture helps organize the system into separate components. This ma
 
 
 ## Route Explaination
-
-
-
-
-
-
-
+In the Student Dashboard System, routes are responsible for receiving user requests and directing them to the appropriate controllers. Routes are defined in the web.php file and act as a connection between the user interface and the application logic. Various routes are implemented to support the functionalities provided by the system. Users can access the dashboard, view enrolled courses, monitor attendance records, check grades, view timetables, manage assignments, read announcements, communicate through messages, update their profiles, and modify account settings. Authentication routes are also provided to enable users to log in and log out securely.
+The GET method is primarily used to retrieve information from the database and display it to users, whereas the POST, PUT, and DELETE methods are utilized to create, update, and remove records. Through routing, user requests are efficiently managed and directed to the corresponding controllers.
 
 ## Controller Explaination
+•	DashboardController
+The DashboardController manages the main dashboard interface of the StudyBuddy system. It displays the students’ profile card, attendance percentage, upcoming classes, notifications, recent announcement, assignment deadlines and calendar events. This controller provides users with an overview of their academic progress and activities.
+
+•	AnnouncementController
+The AnnouncementController is responsible for managing announcements issued by lecturers or administrators. It enables students to stay informed about important updates and academic notices.
+
+•	MessageController
+The MessageController facilitates communication between users. It manages the sending, receiving, and retrieval of messages, thereby improving interaction and information sharing.
+
+•	ProfileController
+The ProfileController manages student profile information. It enables users to view and update personal details and profile pictures.
+
+•	RatingController
+The RatingController manages the feedback and rating mechanism. After participating in study sessions, users can rate their experience and provide comments regarding the quality of assistance received. This feature helps maintain service quality and encourages users to provide constructive feedback.
 
 
-
-
-
-
+•	SettingController
+The SettingController handles account settings and preferences. It allows users to modify their account information and customize system settings according to their preferences.
 
 ## Models Explaination
+•	Student model
+The student model stores information related to registered students, including student ID, name, email address, password, and profile information. It serves as the central entity of the system and maintains relationships with courses, attendance records, grades, assignments, and messages.
 
+•	Course model
+The Course model stores information about enrolled courses, including course codes, course names, and credit hours. It maintains the relationship between students and their respective courses.
 
+•	Grade model
+The Grade model stores academic performance data and records the grades obtained by students. 
 
+•	Timetable model
+The Timetable model manages scheduling information, including class dates, times, and venues. This model ensures that students can access their class schedules effectively.
 
+•	Assignment model
+The Assignment model stores assignment details such as titles, descriptions, due dates, and submission status. It enables students to track pending and completed assignments.
 
+•	Annoucement model
+The Announcement model manages important notices and updates issued by lecturers or administrators. It stores announcement titles, contents, and publication dates.
+
+•	Message model
+The Message model stores communication records between users. It records message content, sender information, receiver information, and timestamps.
+
+•	Setting model
+The Setting model manages user preferences and account configurations, ensuring that students can personalize their experience within the system.
 
 ## CRUD Explaination
 
