@@ -29,6 +29,6 @@
 
     @yield('auth-content')
 
-    <p class="mt-6 text-xs text-gray-400 dark:text-slate-500">BIIT 2305 &mdash; Web Application Development &middot; Section 1</p>
+    <p class="mt-6 text-xs text-gray-400 dark:text-slate-500">BIIT 2305 &mdash; Web Application Development &middot; Section 3</p>
 </div>
 @endsection
